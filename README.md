@@ -28,73 +28,73 @@ docker run -rm uzyexe/terraform <additional param>
 ### terraform apply
 
 ```
-docker run -v /etc/ssl/certs:/etc/ssl/certs:ro -v /data:/data uzyexe/terraform apply
+docker run -v /etc/ssl/certs:/etc/ssl/certs:ro uzyexe/terraform apply
 ```
 
 ### terraform destroy
 
 ```
-docker run -v /data:/data uzyexe/terraform destroy [options] [DIR]
+docker run uzyexe/terraform destroy [options] [DIR]
 ```
 
 ### terraform get
 
 ```
-docker run -v /data:/data uzyexe/terraform get [options] PATH
+docker run uzyexe/terraform get [options] PATH
 ```
 
 ### terraform graph
 
 ```
-docker run -v /data:/data uzyexe/terraform graph
+docker run uzyexe/terraform graph
 ```
 
 ### terraform init
 
 ```
-docker run -v /data:/data uzyexe/terraform init [options] SOURCE [PATH]
+docker run uzyexe/terraform init [options] SOURCE [PATH]
 ```
 
 ### terraform output
 
 ```
-docker run -v /data:/data uzyexe/terraform output [options] NAME
+docker run uzyexe/terraform output [options] NAME
 ```
 
 ### terraform plan
 
 ```
-docker run -v /etc/ssl/certs:/etc/ssl/certs:ro -v /data:/data uzyexe/terraform plan [options]
+docker run -v /etc/ssl/certs:/etc/ssl/certs:ro uzyexe/terraform plan [options]
 ```
 
 ### terraform pull
 
 ```
-docker run -v /data:/data uzyexe/terraform pull [options]
+docker run uzyexe/terraform pull [options]
 ```
 
 ### terraform push
 
 ```
-docker run -v /data:/data uzyexe/terraform push
+docker run uzyexe/terraform push [options]
 ```
 
 ### terraform refresh
 
 ```
-docker run -v /etc/ssl/certs:/etc/ssl/certs:ro -v /data:/data uzyexe/terraform refresh
+docker run -v /etc/ssl/certs:/etc/ssl/certs:ro uzyexe/terraform refresh
 ```
 
 ### terraform remote
 
 ```
-docker run -v /data:/data uzyexe/terraform remote [options]
+docker run uzyexe/terraform remote [options]
 ```
 
 ### terraform show
 
 ```
-docker run -v /data:/data uzyexe/terraform show terraform.tfstate
+docker run uzyexe/terraform show terraform.tfstate
 ```
 
 ### terraform version
