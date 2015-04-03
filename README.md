@@ -91,6 +91,12 @@ docker run --rm -v /data:/data -v /etc/ssl/certs:/etc/ssl/certs:ro --net=host uz
 docker run --rm -v /data:/data uzyexe/terraform show terraform.tfstate
 ```
 
+### terraform taint
+
+```
+docker run --rm -v /data:/data -v /etc/ssl/certs:/etc/ssl/certs:ro --net=host uzyexe/terraform taint [options] name
+```
+
 ### terraform version
 
 ```
