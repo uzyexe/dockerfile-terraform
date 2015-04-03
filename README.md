@@ -67,12 +67,6 @@ docker run --rm -v /data:/data uzyexe/terraform output [options] NAME
 docker run --rm -v /data:/data -v /etc/ssl/certs:/etc/ssl/certs:ro --net=host uzyexe/terraform plan [options]
 ```
 
-### terraform pull
-
-```
-docker run --rm -v /data:/data -v /etc/ssl/certs:/etc/ssl/certs:ro --net=host uzyexe/terraform pull [options]
-```
-
 ### terraform push
 
 ```
