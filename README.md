@@ -18,7 +18,8 @@ This Docker image is based on the [progrium/busybox
 ## How to use this image
 
 ```
-docker run --rm uzyexe/terraform <additional param>
+docker run --rm uzyexe/terraform [--version] [--help] <command> [<args>]
+
 ```
 
 ## Using
@@ -28,7 +29,7 @@ docker run --rm uzyexe/terraform <additional param>
 ### terraform apply
 
 ```
-docker run --rm -v /data:/data -v /etc/ssl/certs:/etc/ssl/certs:ro --net=host uzyexe/terraform apply
+docker run --rm -v /data:/data -v /etc/ssl/certs:/etc/ssl/certs:ro --net=host uzyexe/terraform apply [options]
 ```
 
 ### terraform destroy
@@ -46,7 +47,7 @@ docker run --rm -v /data:/data uzyexe/terraform get [options] PATH
 ### terraform graph
 
 ```
-docker run --rm -v /data:/data uzyexe/terraform graph
+docker run --rm -v /data:/data uzyexe/terraform graph [options]
 ```
 
 ### terraform init
@@ -76,7 +77,7 @@ docker run --rm -v /data:/data -v /etc/ssl/certs:/etc/ssl/certs:ro --net=host uz
 ### terraform refresh
 
 ```
-docker run --rm -v /data:/data -v /etc/ssl/certs:/etc/ssl/certs:ro --net=host uzyexe/terraform refresh
+docker run --rm -v /data:/data -v /etc/ssl/certs:/etc/ssl/certs:ro --net=host uzyexe/terraform refresh [options]
 ```
 
 ### terraform remote
@@ -88,7 +89,7 @@ docker run --rm -v /data:/data -v /etc/ssl/certs:/etc/ssl/certs:ro --net=host uz
 ### terraform show
 
 ```
-docker run --rm -v /data:/data uzyexe/terraform show terraform.tfstate
+docker run --rm -v /data:/data uzyexe/terraform show terraform.tfstate [options]
 ```
 
 ### terraform taint
