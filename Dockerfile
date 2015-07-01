@@ -1,6 +1,6 @@
 FROM debian:wheezy
 
-ENV TERRAFORM_VERSION 0.5.3
+ENV TERRAFORM_VERSION 0.6.0
 
 RUN apt-get update -qq && \
     apt-get install -qy wget unzip && \
@@ -10,7 +10,7 @@ RUN apt-get update -qq && \
     wget -O /terraform.zip http://dl.bintray.com/mitchellh/terraform/terraform_${TERRAFORM_VERSION}_linux_amd64.zip && \
     unzip /terraform.zip -d /terraform && \
     rm -f /terraform.zip
-
+ 
 VOLUME ["/data"]
 WORKDIR /data
 
