@@ -1,6 +1,6 @@
 FROM debian:wheezy
 
-ENV TERRAFORM_VERSION 0.6.0
+ENV TERRAFORM_VERSION 0.6.1
 
 RUN apt-get update -qq && \
     apt-get install -qy wget unzip && \
