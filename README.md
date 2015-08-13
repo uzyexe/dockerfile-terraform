@@ -12,8 +12,8 @@ Simple file based configuration gives you a single view of your entire infrastru
 
 [**Trusted Build**](https://registry.hub.docker.com/u/uzyexe/terraform/)
 
-This Docker image is based on the [progrium/busybox
-](https://registry.hub.docker.com/u/progrium/busybox/) base image.
+This Docker image is based on the official [alpine:3.2
+](https://registry.hub.docker.com/_/alpine/) base image.
 
 ## How to use this image
 
