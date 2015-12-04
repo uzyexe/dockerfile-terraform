@@ -12,13 +12,12 @@ Simple file based configuration gives you a single view of your entire infrastru
 
 [**Trusted Build**](https://registry.hub.docker.com/u/uzyexe/terraform/)
 
-This Docker image is based on the official [alpine:3.2
-](https://registry.hub.docker.com/_/alpine/) base image.
+This Docker image is based on the official [alpine:3.2](https://registry.hub.docker.com/_/alpine/) base image.
 
 ## How to use this image
 
 ```
-docker run --rm uzyexe/terraform [--version] [--help] <command> [<args>]
+docker run uzyexe/terraform [--version] [--help] <command> [<args>]
 
 ```
 
@@ -29,7 +28,7 @@ docker run --rm uzyexe/terraform [--version] [--help] <command> [<args>]
 ### terraform apply
 
 ```
-docker run --rm -v /data:/data -v /etc/ssl/certs:/etc/ssl/certs:ro --net=host uzyexe/terraform apply [options]
+docker run --rm -v /data:/data uzyexe/terraform apply [options]
 ```
 
 ### terraform destroy
@@ -65,25 +64,25 @@ docker run --rm -v /data:/data uzyexe/terraform output [options] NAME
 ### terraform plan
 
 ```
-docker run --rm -v /data:/data -v /etc/ssl/certs:/etc/ssl/certs:ro --net=host uzyexe/terraform plan [options]
+docker run --rm -v /data:/data uzyexe/terraform plan [options]
 ```
 
 ### terraform push
 
 ```
-docker run --rm -v /data:/data -v /etc/ssl/certs:/etc/ssl/certs:ro --net=host uzyexe/terraform push [options]
+docker run --rm -v /data:/data uzyexe/terraform push [options]
 ```
 
 ### terraform refresh
 
 ```
-docker run --rm -v /data:/data -v /etc/ssl/certs:/etc/ssl/certs:ro --net=host uzyexe/terraform refresh [options]
+docker run --rm -v /data:/data uzyexe/terraform refresh [options]
 ```
 
 ### terraform remote
 
 ```
-docker run --rm -v /data:/data -v /etc/ssl/certs:/etc/ssl/certs:ro --net=host uzyexe/terraform remote [options]
+docker run --rm -v /data:/data uzyexe/terraform remote [options]
 ```
 
 ### terraform show
@@ -95,7 +94,7 @@ docker run --rm -v /data:/data uzyexe/terraform show terraform.tfstate [options]
 ### terraform taint
 
 ```
-docker run --rm -v /data:/data -v /etc/ssl/certs:/etc/ssl/certs:ro --net=host uzyexe/terraform taint [options] name
+docker run --rm -v /data:/data uzyexe/terraform taint [options] name
 ```
 
 ### terraform version
