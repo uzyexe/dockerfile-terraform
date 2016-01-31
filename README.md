@@ -6,13 +6,13 @@ Terraform provides a common configuration to launch infrastructure — from phys
 
 Simple file based configuration gives you a single view of your entire infrastructure.
 
-[http://www.terraform.io/](http://www.terraform.io/)
+[https://www.terraform.io/](https://www.terraform.io/)
 
 ## Dockerfile
 
-[**Trusted Build**](https://registry.hub.docker.com/u/uzyexe/terraform/)
+[**Trusted Build**](https://hub.docker.com/r/uzyexe/terraform/)
 
-This Docker image is based on the official [alpine:3.2](https://registry.hub.docker.com/_/alpine/) base image.
+This Docker image is based on the official [alpine:3.3](https://hub.docker.com/_/alpine/) base image.
 
 ## How to use this image
 
