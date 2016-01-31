@@ -1,4 +1,4 @@
-# uzyexe/terraform [![Circle CI](https://circleci.com/gh/uzyexe/dockerfile-terraform/tree/master.svg?style=svg)](https://circleci.com/gh/uzyexe/dockerfile-terraform/tree/master)
+# uzyexe/terraform [![Circle CI](https://circleci.com/gh/uzyexe/dockerfile-terraform.svg?style=svg)](https://circleci.com/gh/uzyexe/dockerfile-terraform)
 
 ## What is terraform
 
