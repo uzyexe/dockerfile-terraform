@@ -1,4 +1,5 @@
 # Unif.io Terraform Dockerfile
+[![Circle CI](https://circleci.com/gh/unifio/dockerfile-terraform.svg?style=svg)](https://circleci.com/gh/unifio/dockerfile-terraform)
 
 ## What is terraform
 
