@@ -11,7 +11,8 @@ dependencies:
     - docker info
     - if [[ -e ~/docker/image.tar ]]; then docker load --input ~/docker/image.tar; fi
     - docker build -t unifio/terraform .
-    - mkdir -p ~/docker; docker save unifio/terraform > ~/docker/image.tar
+    - mkdir -p ~/docker
+    - docker save unifio/terraform > ~/docker/image.tar
 
 test:
   override:
