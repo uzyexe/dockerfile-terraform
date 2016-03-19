@@ -1,3 +1,5 @@
+[![](https://badge.imagelayers.io/uzyexe/terraform:latest.svg)](https://imagelayers.io/?images=uzyexe/terraform:latest 'Get your own badge on imagelayers.io')
+
 # uzyexe/terraform [![Circle CI](https://circleci.com/gh/uzyexe/dockerfile-terraform.svg?style=svg)](https://circleci.com/gh/uzyexe/dockerfile-terraform)
 
 ## What is terraform
