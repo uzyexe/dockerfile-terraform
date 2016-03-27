@@ -1,6 +1,6 @@
 machine:
   environment:
-    TF_VERSION: 0.6.13
+    TF_VERSION: 0.6.14
   services:
     - docker
 
@@ -17,6 +17,16 @@ dependencies:
 test:
   override:
     - docker run unifio/terraform version
+    - |
+      docker run -v ~/.aws:/root/.aws \
+                 -v `pwd`:/data \
+                 -w /data/uat \
+                --rm unifio/terraform plan
+    - |
+      docker run -v ~/.aws:/root/.aws \
+                 -v `pwd`:/data \
+                 -w /data/uat \
+                --rm unifio/terraform apply
 
 deployment:
   hub:

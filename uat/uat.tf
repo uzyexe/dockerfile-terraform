@@ -1,0 +1,3 @@
+# Terraform verification
+
+provider "aws" {}
