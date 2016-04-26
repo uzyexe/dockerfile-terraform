@@ -104,3 +104,13 @@ docker run --rm -v /data:/data uzyexe/terraform taint [options] name
 ```
 docker run --rm uzyexe/terraform version
 ```
+
+
+# Authors
+
+* Shuji Yamada (<uzy.exe@gmail.com>)
+
+## License
+
+This project is licensed under the terms of the MIT license.
+
