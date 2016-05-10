@@ -1,7 +1,7 @@
 FROM alpine:3.3
 
-ENV TERRAFORM_VERSION 0.6.15
-ENV TERRAFORM_SHA256SUM 2a81faa54ed6c5e7c065444617fc999f0ab6d433e4e03a0ad599892e74ffff6b
+ENV TERRAFORM_VERSION 0.6.16
+ENV TERRAFORM_SHA256SUM e10987bca7ec15301bc2fd152795d51cfc9fdbe6c70c9708e6e2ed81eaa1f082
 
 RUN apk add --update wget ca-certificates unzip git mercurial && \
     wget -q "https://circle-artifacts.com/gh/andyshinn/alpine-pkg-glibc/6/artifacts/0/home/ubuntu/alpine-pkg-glibc/packages/x86_64/glibc-2.21-r2.apk" && \
