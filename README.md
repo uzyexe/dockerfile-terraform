@@ -105,6 +105,12 @@ docker run --rm -v /data:/data uzyexe/terraform remote [options]
 docker run --rm -v /data:/data uzyexe/terraform show terraform.tfstate [options]
 ```
 
+### terraform state <subcommand> [options] [args]
+
+```
+docker run --rm -v /data:/data uzyexe/terraform state <subcommand> [options] [args]
+```
+
 ### terraform taint
 
 ```
