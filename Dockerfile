@@ -1,7 +1,7 @@
 FROM alpine:3.4
 
 ENV TERRAFORM_VERSION 0.6.16
-ENV GLIBC_VERSION 2.23-r1
+ENV GLIBC_VERSION 2.23-r3
 
 RUN apk add --update wget ca-certificates unzip git bash && \
     wget -q "https://github.com/andyshinn/alpine-pkg-glibc/releases/download/${GLIBC_VERSION}/glibc-${GLIBC_VERSION}.apk" && \		
