@@ -57,6 +57,12 @@ docker run --rm -v /data:/data uzyexe/terraform get [options] PATH
 docker run --rm -v /data:/data uzyexe/terraform graph [options]
 ```
 
+### terraform import
+
+```
+docker run --rm -v /data:/data uzyexe/terraform [options] ADDR ID
+```
+
 ### terraform init
 
 ```
