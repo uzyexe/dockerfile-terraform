@@ -117,6 +117,12 @@ docker run --rm -v /data:/data uzyexe/terraform taint [options] name
 docker run --rm -v /data:/data uzyexe/terraform untaint [options] name
 ```
 
+### terraform validate
+
+```
+docker run --rm -v /data:/data uzyexe/terraform validate
+```
+
 ### terraform version
 
 ```
