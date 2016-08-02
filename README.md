@@ -39,6 +39,12 @@ docker run --rm -v /data:/data uzyexe/terraform apply [options]
 docker run --rm -v /data:/data uzyexe/terraform destroy [options] [DIR]
 ```
 
+### terraform fmt
+
+```
+docker run --rm -v /data:/data uzyexe/terraform fmt [options] [DIR]
+```
+
 ### terraform get
 
 ```
