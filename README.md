@@ -111,6 +111,12 @@ docker run --rm -v /data:/data uzyexe/terraform show terraform.tfstate [options]
 docker run --rm -v /data:/data uzyexe/terraform taint [options] name
 ```
 
+### terraform untaint
+
+```
+docker run --rm -v /data:/data uzyexe/terraform untaint [options] name
+```
+
 ### terraform version
 
 ```
