@@ -39,6 +39,12 @@ docker run --rm -v /data:/data uzyexe/terraform apply [options]
 docker run --rm -v /data:/data uzyexe/terraform destroy [options] [DIR]
 ```
 
+### terraform fmt
+
+```
+docker run --rm -v /data:/data uzyexe/terraform fmt [options] [DIR]
+```
+
 ### terraform get
 
 ```
@@ -49,6 +55,12 @@ docker run --rm -v /data:/data uzyexe/terraform get [options] PATH
 
 ```
 docker run --rm -v /data:/data uzyexe/terraform graph [options]
+```
+
+### terraform import
+
+```
+docker run --rm -v /data:/data uzyexe/terraform [options] ADDR ID
 ```
 
 ### terraform init
@@ -93,10 +105,28 @@ docker run --rm -v /data:/data uzyexe/terraform remote [options]
 docker run --rm -v /data:/data uzyexe/terraform show terraform.tfstate [options]
 ```
 
+### terraform state <subcommand> [options] [args]
+
+```
+docker run --rm -v /data:/data uzyexe/terraform state <subcommand> [options] [args]
+```
+
 ### terraform taint
 
 ```
 docker run --rm -v /data:/data uzyexe/terraform taint [options] name
+```
+
+### terraform untaint
+
+```
+docker run --rm -v /data:/data uzyexe/terraform untaint [options] name
+```
+
+### terraform validate
+
+```
+docker run --rm -v /data:/data uzyexe/terraform validate
 ```
 
 ### terraform version
