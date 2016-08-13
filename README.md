@@ -11,9 +11,7 @@ Simple file based configuration gives you a single view of your entire infrastru
 
 ## Dockerfile
 
-[**Trusted Build**](https://hub.docker.com/r/unifio/terraform/)
-
-This Docker image is based on the official [alpine:3.3](https://hub.docker.com/_/alpine/) base image.
+This Docker image is based on the official [alpine:3.4](https://hub.docker.com/_/alpine/) base image.
 
 ## How to use this image
 

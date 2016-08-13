@@ -1,16 +1,21 @@
-FROM alpine:3.3
+FROM alpine:3.4
+MAINTAINER "Unif.io, Inc. <support@unif.io>"
 
-ENV TERRAFORM_VERSION 0.6.16
-ENV TERRAFORM_SHA256SUM e10987bca7ec15301bc2fd152795d51cfc9fdbe6c70c9708e6e2ed81eaa1f082
+ENV TERRAFORM_VERSION 0.7.0
 
-RUN apk add --update wget ca-certificates unzip git mercurial && \
-    wget -q "https://circle-artifacts.com/gh/andyshinn/alpine-pkg-glibc/6/artifacts/0/home/ubuntu/alpine-pkg-glibc/packages/x86_64/glibc-2.21-r2.apk" && \
-    apk add --allow-untrusted glibc-2.21-r2.apk && \
-    wget -q -O /terraform.zip "https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terraform_${TERRAFORM_VERSION}_linux_amd64.zip" && \
-    echo "${TERRAFORM_SHA256SUM}  /terraform.zip" | sha256sum -c && \
-    unzip /terraform.zip -d /bin && \
-    apk del --purge wget ca-certificates unzip && \
-    rm -rf /var/cache/apk/* glibc-2.21-r2.apk /terraform.zip
+RUN apk add --no-cache --update ca-certificates gnupg openssl git mercurial wget unzip && \
+    gpg --recv-keys 91A6E7F85D05C65630BEF18951852D87348FFC4C && \
+    mkdir -p /tmp/build && \
+    cd /tmp/build && \
+    wget -q "https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terraform_${TERRAFORM_VERSION}_linux_amd64.zip" && \
+    wget -q "https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terraform_${TERRAFORM_VERSION}_SHA256SUMS" && \
+    wget -q "https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terraform_${TERRAFORM_VERSION}_SHA256SUMS.sig" && \
+    gpg --batch --verify terraform_${TERRAFORM_VERSION}_SHA256SUMS.sig terraform_${TERRAFORM_VERSION}_SHA256SUMS && \
+    grep terraform_${TERRAFORM_VERSION}_linux_amd64.zip terraform_${TERRAFORM_VERSION}_SHA256SUMS | sha256sum -c && \
+    unzip -d /bin terraform_${TERRAFORM_VERSION}_linux_amd64.zip && \
+    cd /tmp && \
+    rm -rf /tmp/build && \
+    rm -rf /root/.gnupg
 
 VOLUME ["/data"]
 WORKDIR /data

@@ -1,6 +1,6 @@
 machine:
   environment:
-    TF_VERSION: 0.6.16
+    TF_VERSION: 0.7.0
   services:
     - docker
 
@@ -21,12 +21,17 @@ test:
       docker run -v ~/.aws:/root/.aws \
                  -v `pwd`:/data \
                  -w /data/uat \
-                --rm unifio/terraform plan
+                 --rm unifio/terraform plan
     - |
       docker run -v ~/.aws:/root/.aws \
                  -v `pwd`:/data \
                  -w /data/uat \
-                --rm unifio/terraform apply
+                 --rm unifio/terraform apply
+    - |
+      docker run -v ~/.aws:/root/.aws \
+                 -v `pwd`:/data \
+                 -w /data/uat \
+                 --rm unifio/terraform destroy -force
 
 deployment:
   hub:
