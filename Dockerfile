@@ -1,7 +1,7 @@
 FROM alpine:3.4
 MAINTAINER "Unif.io, Inc. <support@unif.io>"
 
-ENV TERRAFORM_VERSION 0.7.2
+ENV TERRAFORM_VERSION 0.7.3
 
 RUN apk add --no-cache --update ca-certificates gnupg openssl git mercurial wget unzip && \
     gpg --recv-keys 91A6E7F85D05C65630BEF18951852D87348FFC4C && \
