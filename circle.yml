@@ -21,17 +21,48 @@ test:
       docker run -v ~/.aws:/root/.aws \
                  -v `pwd`:/data \
                  -w /data/uat \
+                 -e AWS_DEFAULT_REGION=us-east-1 \
                  --rm unifio/terraform plan
     - |
       docker run -v ~/.aws:/root/.aws \
                  -v `pwd`:/data \
                  -w /data/uat \
+                 -e AWS_DEFAULT_REGION=us-east-1 \
                  --rm unifio/terraform apply
     - |
       docker run -v ~/.aws:/root/.aws \
                  -v `pwd`:/data \
                  -w /data/uat \
+                 -e AWS_DEFAULT_REGION=us-east-1 \
                  --rm unifio/terraform destroy -force
+    - "! test -O uat/terraform.tfstate"
+    - rm -f uat/terraform.*
+    - |
+      docker run -v ~/.aws:/home/user/.aws \
+                 -v `pwd`:/data \
+                 -w /data/uat \
+                 -e AWS_DEFAULT_REGION=us-east-1 \
+                 -e LOCAL_USER_ID=$UID \
+                 -e DEBUG=true \
+                 --rm unifio/terraform plan
+    - |
+      docker run -v ~/.aws:/home/user/.aws \
+                 -v `pwd`:/data \
+                 -w /data/uat \
+                 -e AWS_DEFAULT_REGION=us-east-1 \
+                 -e LOCAL_USER_ID=$UID \
+                 -e DEBUG=true \
+                 --rm unifio/terraform apply
+    - |
+      docker run -v ~/.aws:/home/user/.aws \
+                 -v `pwd`:/data \
+                 -w /data/uat \
+                 -e AWS_DEFAULT_REGION=us-east-1 \
+                 -e LOCAL_USER_ID=$UID \
+                 -e DEBUG=true \
+                 --rm unifio/terraform destroy -force
+    - test -O uat/terraform.tfstate
+    
 
 deployment:
   hub:
