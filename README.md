@@ -13,9 +13,28 @@ Simple file based configuration gives you a single view of your entire infrastru
 
 This Docker image is based on the official [alpine:3.4](https://hub.docker.com/_/alpine/) base image.
 
+## Enhancements
+
+* Includes Git and Mercurial for sourcing Terraform modules.
+* Includes [gosu](https://github.com/tianon/gosu) for optionally changing the user that executes Terraform.
+
 ## How to use this image
 
 ```
-docker run unifio/terraform [--version] [--help] <command> [<args>]
+docker run --rm unifio/terraform [--version] [--help] <command> [<args>]
+```
 
+In Continuous Integration (CI) environments it can often be a problem if the container leaves behind artifacts owned by the root user that then prevent clean-up of the build workspace.
+You can optionally coordinate the UID of the build user and the user within the container by passing the `LOCAL_USER_ID` environment variables into the container.
+
+For example:
+
+```
+docker run -e LOCAL_USER_ID=$UID --rm unifio/terraform [--version] [--help] <command> [<args>]
+```
+
+With debugging output to log which UID was used:
+
+```
+docker run -e LOCAL_USER_ID=$UID -e DEBUG=true --rm unifio/terraform [--version] [--help] <command> [<args>]
 ```
