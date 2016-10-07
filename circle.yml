@@ -1,6 +1,6 @@
 machine:
   environment:
-    TF_VERSION: 0.7.4
+    TF_VERSION: 0.7.5
   services:
     - docker
 
