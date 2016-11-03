@@ -1,6 +1,6 @@
 machine:
   environment:
-    TF_VERSION: 0.7.7
+    TF_VERSION: 0.7.8
   services:
     - docker
 
@@ -62,7 +62,7 @@ test:
                  -e DEBUG=true \
                  unifio/terraform destroy -force
     - test -O uat/terraform.tfstate
-    
+
 
 deployment:
   hub:
