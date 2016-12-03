@@ -1,7 +1,7 @@
 FROM alpine:3.4
 MAINTAINER "Unif.io, Inc. <support@unif.io>"
 
-ENV TERRAFORM_VERSION 0.7.11
+ENV TERRAFORM_VERSION 0.7.12
 
 # This is the release of https://github.com/hashicorp/docker-base to pull in order
 # to provide HashiCorp-built versions of basic utilities like dumb-init and gosu.
@@ -23,7 +23,7 @@ RUN apk add --no-cache --update ca-certificates gnupg openssl git mercurial wget
     wget -q "https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terraform_${TERRAFORM_VERSION}_SHA256SUMS.sig" && \
     gpg --batch --verify terraform_${TERRAFORM_VERSION}_SHA256SUMS.sig terraform_${TERRAFORM_VERSION}_SHA256SUMS && \
     grep terraform_${TERRAFORM_VERSION}_linux_amd64.zip terraform_${TERRAFORM_VERSION}_SHA256SUMS | sha256sum -c && \
-    unzip -d /bin terraform_${TERRAFORM_VERSION}_linux_amd64.zip && \
+    unzip -d /usr/local/bin terraform_${TERRAFORM_VERSION}_linux_amd64.zip && \
     cd /tmp && \
     rm -rf /tmp/build && \
     rm -rf /root/.gnupg
