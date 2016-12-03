@@ -9,7 +9,7 @@ fi
 if [ "$USER_ID" -ne "0" ]; then
   adduser -s /bin/sh -D -u $USER_ID user
   export HOME=/home/user
-  exec /bin/gosu user /bin/terraform "$@"
+  exec /bin/gosu user /usr/local/bin/terraform "$@"
 else
-  exec /bin/terraform "$@"
+  exec /usr/local/bin/terraform "$@"
 fi
