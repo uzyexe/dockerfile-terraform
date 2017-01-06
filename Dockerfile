@@ -1,4 +1,4 @@
-FROM alpine:3.4
+FROM alpine:3.5
 MAINTAINER "Unif.io, Inc. <support@unif.io>"
 
 ENV TERRAFORM_VERSION 0.8.1
