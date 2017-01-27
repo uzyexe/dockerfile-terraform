@@ -1,6 +1,7 @@
 machine:
   environment:
-    TF_VERSION: 0.8.2
+    TF_VERSION: 0.8.4
+    DOCKER_IMAGE: 'unifio/terraform'
   services:
     - docker
 
@@ -10,31 +11,34 @@ dependencies:
   override:
     - docker info
     - if [[ -e ~/docker/image.tar ]]; then docker load --input ~/docker/image.tar; fi
-    - docker build -t unifio/terraform .
+    - docker build --rm=false -t ${DOCKER_IMAGE} .
     - mkdir -p ~/docker
-    - docker save unifio/terraform > ~/docker/image.tar
+    - docker save ${DOCKER_IMAGE} > ~/docker/image.tar
 
 test:
   override:
-    - docker run unifio/terraform version
+    - docker run -e CHECKPOINT_DISABLE=1 ${DOCKER_IMAGE} version
     - |
       docker run -v ~/.aws:/root/.aws \
                  -v `pwd`:/data \
                  -w /data/uat \
                  -e AWS_DEFAULT_REGION=us-east-1 \
-                 unifio/terraform plan
+                 -e CHECKPOINT_DISABLE=1 \
+                 ${DOCKER_IMAGE} plan
     - |
       docker run -v ~/.aws:/root/.aws \
                  -v `pwd`:/data \
                  -w /data/uat \
                  -e AWS_DEFAULT_REGION=us-east-1 \
-                 unifio/terraform apply
+                 -e CHECKPOINT_DISABLE=1 \
+                 ${DOCKER_IMAGE} apply
     - |
       docker run -v ~/.aws:/root/.aws \
                  -v `pwd`:/data \
                  -w /data/uat \
                  -e AWS_DEFAULT_REGION=us-east-1 \
-                 unifio/terraform destroy -force
+                 -e CHECKPOINT_DISABLE=1 \
+                 ${DOCKER_IMAGE} destroy -force
     - "! test -O uat/terraform.tfstate"
     - rm -f uat/terraform.*
     - |
@@ -42,25 +46,28 @@ test:
                  -v `pwd`:/data \
                  -w /data/uat \
                  -e AWS_DEFAULT_REGION=us-east-1 \
+                 -e CHECKPOINT_DISABLE=1 \
                  -e LOCAL_USER_ID=$UID \
                  -e DEBUG=true \
-                 unifio/terraform plan
+                 ${DOCKER_IMAGE} plan
     - |
       docker run -v ~/.aws:/home/user/.aws \
                  -v `pwd`:/data \
                  -w /data/uat \
                  -e AWS_DEFAULT_REGION=us-east-1 \
+                 -e CHECKPOINT_DISABLE=1 \
                  -e LOCAL_USER_ID=$UID \
                  -e DEBUG=true \
-                 unifio/terraform apply
+                 ${DOCKER_IMAGE} apply
     - |
       docker run -v ~/.aws:/home/user/.aws \
                  -v `pwd`:/data \
                  -w /data/uat \
                  -e AWS_DEFAULT_REGION=us-east-1 \
+                 -e CHECKPOINT_DISABLE=1 \
                  -e LOCAL_USER_ID=$UID \
                  -e DEBUG=true \
-                 unifio/terraform destroy -force
+                 ${DOCKER_IMAGE} destroy -force
     - test -O uat/terraform.tfstate
 
 
@@ -69,5 +76,5 @@ deployment:
     branch: master
     commands:
       - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
-      - docker tag -f `docker images | grep -E 'unifio/terraform' | awk '{print $3}'` unifio/terraform:${TF_VERSION}
-      - docker push unifio/terraform
+      - docker tag -f `docker images | grep -E "${DOCKER_IMAGE}" | awk '{print $3}'` ${DOCKER_IMAGE}:${TF_VERSION}
+      - docker push ${DOCKER_IMAGE}
