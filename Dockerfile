@@ -1,7 +1,7 @@
 FROM alpine:3.5
 MAINTAINER "Unif.io, Inc. <support@unif.io>"
 
-ENV TERRAFORM_VERSION 0.8.7
+ENV TERRAFORM_VERSION 0.8.8
 
 # This is the release of https://github.com/hashicorp/docker-base to pull in order
 # to provide HashiCorp-built versions of basic utilities like dumb-init and gosu.
