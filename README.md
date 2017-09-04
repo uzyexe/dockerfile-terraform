@@ -45,6 +45,12 @@ docker run --rm -v /data:/data uzyexe/terraform destroy [options] [DIR]
 docker run --rm -v /data:/data uzyexe/terraform fmt [options] [DIR]
 ```
 
+### terraform force-unlock
+
+```
+docker run --rm -v /data:/data uzyexe/terraform force-unlock LOCK_ID [DIR]
+```
+
 ### terraform get
 
 ```
@@ -81,6 +87,12 @@ docker run --rm -v /data:/data uzyexe/terraform output [options] NAME
 docker run --rm -v /data:/data uzyexe/terraform plan [options]
 ```
 
+### terraform providers
+
+```
+docker run --rm -v /data:/data uzyexe/terraform providers [config-path]
+```
+
 ### terraform push
 
 ```
@@ -91,12 +103,6 @@ docker run --rm -v /data:/data uzyexe/terraform push [options]
 
 ```
 docker run --rm -v /data:/data uzyexe/terraform refresh [options]
-```
-
-### terraform remote
-
-```
-docker run --rm -v /data:/data uzyexe/terraform remote [options]
 ```
 
 ### terraform show
@@ -135,6 +141,11 @@ docker run --rm -v /data:/data uzyexe/terraform validate
 docker run --rm uzyexe/terraform version
 ```
 
+### terraform workspace
+
+```
+docker run --rm uzyexe/terraform workspace <subcommand> [options] [args]
+```
 
 # Authors
 
