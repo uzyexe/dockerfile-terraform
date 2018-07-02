@@ -1,6 +1,6 @@
 FROM alpine:3.6
 
-ENV TERRAFORM_VERSION 0.10.8
+ENV TERRAFORM_VERSION 0.11.0
 
 RUN apk add --update wget ca-certificates unzip git bash && \
     wget -q -O /terraform.zip "https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terraform_${TERRAFORM_VERSION}_linux_amd64.zip" && \
