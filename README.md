@@ -30,121 +30,121 @@ docker run uzyexe/terraform [--version] [--help] <command> [<args>]
 ### terraform apply
 
 ```
-docker run --rm -v /data:/data uzyexe/terraform apply [options]
+docker run --rm -it -v /data:/data uzyexe/terraform apply [options]
 ```
 
 ### terraform destroy
 
 ```
-docker run --rm -v /data:/data uzyexe/terraform destroy [options] [DIR]
+docker run --rm -it -v /data:/data uzyexe/terraform destroy [options] [DIR]
 ```
 
 ### terraform fmt
 
 ```
-docker run --rm -v /data:/data uzyexe/terraform fmt [options] [DIR]
+docker run --rm -it -v /data:/data uzyexe/terraform fmt [options] [DIR]
 ```
 
 ### terraform force-unlock
 
 ```
-docker run --rm -v /data:/data uzyexe/terraform force-unlock LOCK_ID [DIR]
+docker run --rm -it -v /data:/data uzyexe/terraform force-unlock LOCK_ID [DIR]
 ```
 
 ### terraform get
 
 ```
-docker run --rm -v /data:/data uzyexe/terraform get [options] PATH
+docker run --rm -it -v /data:/data uzyexe/terraform get [options] PATH
 ```
 
 ### terraform graph
 
 ```
-docker run --rm -v /data:/data uzyexe/terraform graph [options]
+docker run --rm -it -v /data:/data uzyexe/terraform graph [options]
 ```
 
 ### terraform import
 
 ```
-docker run --rm -v /data:/data uzyexe/terraform [options] ADDR ID
+docker run --rm -it -v /data:/data uzyexe/terraform [options] ADDR ID
 ```
 
 ### terraform init
 
 ```
-docker run --rm -v /data:/data uzyexe/terraform init [options] SOURCE [PATH]
+docker run --rm -it -v /data:/data uzyexe/terraform init [options] SOURCE [PATH]
 ```
 
 ### terraform output
 
 ```
-docker run --rm -v /data:/data uzyexe/terraform output [options] NAME
+docker run --rm -it -v /data:/data uzyexe/terraform output [options] NAME
 ```
 
 ### terraform plan
 
 ```
-docker run --rm -v /data:/data uzyexe/terraform plan [options]
+docker run --rm -it -v /data:/data uzyexe/terraform plan [options]
 ```
 
 ### terraform providers
 
 ```
-docker run --rm -v /data:/data uzyexe/terraform providers [config-path]
+docker run --rm -it -v /data:/data uzyexe/terraform providers [config-path]
 ```
 
 ### terraform push
 
 ```
-docker run --rm -v /data:/data uzyexe/terraform push [options]
+docker run --rm -it -v /data:/data uzyexe/terraform push [options]
 ```
 
 ### terraform refresh
 
 ```
-docker run --rm -v /data:/data uzyexe/terraform refresh [options]
+docker run --rm -it -v /data:/data uzyexe/terraform refresh [options]
 ```
 
 ### terraform show
 
 ```
-docker run --rm -v /data:/data uzyexe/terraform show terraform.tfstate [options]
+docker run --rm -it -v /data:/data uzyexe/terraform show terraform.tfstate [options]
 ```
 
 ### terraform state <subcommand> [options] [args]
 
 ```
-docker run --rm -v /data:/data uzyexe/terraform state <subcommand> [options] [args]
+docker run --rm -it -v /data:/data uzyexe/terraform state <subcommand> [options] [args]
 ```
 
 ### terraform taint
 
 ```
-docker run --rm -v /data:/data uzyexe/terraform taint [options] name
+docker run --rm -it -v /data:/data uzyexe/terraform taint [options] name
 ```
 
 ### terraform untaint
 
 ```
-docker run --rm -v /data:/data uzyexe/terraform untaint [options] name
+docker run --rm -it -v /data:/data uzyexe/terraform untaint [options] name
 ```
 
 ### terraform validate
 
 ```
-docker run --rm -v /data:/data uzyexe/terraform validate
+docker run --rm -it -v /data:/data uzyexe/terraform validate
 ```
 
 ### terraform version
 
 ```
-docker run --rm uzyexe/terraform version
+docker run --rm -it uzyexe/terraform version
 ```
 
 ### terraform workspace
 
 ```
-docker run --rm uzyexe/terraform workspace <subcommand> [options] [args]
+docker run --rm -it uzyexe/terraform workspace <subcommand> [options] [args]
 ```
 
 # Authors
